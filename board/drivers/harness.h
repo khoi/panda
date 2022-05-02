@@ -73,9 +73,9 @@ uint8_t harness_detect_orientation(void) {
 
 void harness_init(void) {
   // delay such that the connection is fully made before trying orientation detection
-  current_board->set_led(LED_BLUE, true);
+  current_board->set_led(LED_RED, true);
   delay(10000000);
-  current_board->set_led(LED_BLUE, false);
+  current_board->set_led(LED_RED, false);
 
   // try to detect orientation
   uint8_t ret = harness_detect_orientation();

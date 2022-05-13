@@ -179,7 +179,8 @@ void tick_handler(void) {
 
       // turn off the blue LED, turned on by CAN
       // unless we are in power saving mode
-      current_board->set_led(LED_BLUE, (uptime_cnt & 1U) && (power_save_status == POWER_SAVE_STATUS_ENABLED));
+      current_board->set_led(LED_BLUE, false);
+      current_board->set_led(LED_RED, (uptime_cnt & 1U) && (power_save_status == POWER_SAVE_STATUS_ENABLED));
 
       // tick drivers at 1Hz
       harness_tick();

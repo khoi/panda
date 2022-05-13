@@ -205,10 +205,6 @@ static int hyundai_rx_hook(CANPacket_t *to_push) {
       if (cruise_engaged && !cruise_engaged_prev && (hyundai_last_button_interaction < HYUNDAI_PREV_BUTTON_SAMPLES)) {
         controls_allowed = 1;
       }
-
-      if (!cruise_engaged) {
-        controls_allowed = 0;
-      }
       cruise_engaged_prev = cruise_engaged;
     }
 
